@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
@@ -52,7 +53,9 @@ export default function Hero() {
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white transition hover:border-[#F26419] md:hidden"
-            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              menuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
@@ -146,8 +149,7 @@ export default function Hero() {
             </p>
 
             <h1 className="max-w-2xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
-              Hey, I'm{" "}
-              <span className="text-[#F26419]">Rusho.</span>
+              Hey, I'm <span className="text-[#F26419]">Rusho.</span>
               <br />
               I craft digital
               <br className="hidden sm:block" /> experiences that{" "}
@@ -156,8 +158,8 @@ export default function Hero() {
 
             <p className="mt-6 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
               I design and build modern, responsive websites that combine
-              thoughtful UI, clean code, and meaningful user experiences.
-              Let's turn your ideas into something exceptional.
+              thoughtful UI, clean code, and meaningful user experiences. Let's
+              turn your ideas into something exceptional.
             </p>
 
             {/* CTA Buttons */}
@@ -217,18 +219,22 @@ export default function Hero() {
               />
 
               {/* Photo container */}
+
+              {/* Photo container */}
               <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#18181B] shadow-2xl shadow-black/40">
-                <img
-                  src="/rusho.jpg"
-                  alt="Rusho — Web Designer and Frontend Developer"
-                  className="h-full w-full object-cover object-center"
+                <Image src="https://i.ibb.co.com/ZRVXkKPX/Chat-GPT-Image-Jun-4-2026-11-47-30-AM-1.jpg"
+                  alt="Rusho - Web Designer and Frontend Developer"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 420px"
+                  className="object-cover object-center"
                 />
 
                 {/* Image overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#09090B]/90 via-transparent to-transparent" />
 
                 {/* Name on image */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div className="absolute bottom-0 left-0 right-0 z-10 p-6 sm:p-8">
                   <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#F26419]">
                     Designer. Developer.
                   </p>
